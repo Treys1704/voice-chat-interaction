@@ -1,5 +1,5 @@
-import { AudioLines } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { AudioLinesIcon } from './AudioLines';
 
 interface UserAvatarProps {
   user: {
@@ -17,11 +17,6 @@ export default function UserAvatar({ user, size = 'sm', showName = false }: User
     lg: 'w-16 h-16'
   };
 
-  const micSizeClasses = {
-    sm: 'w-2 h-2',
-    lg: 'w-3 h-3'
-  };
-
   return (
     <motion.div 
       layout
@@ -36,11 +31,11 @@ export default function UserAvatar({ user, size = 'sm', showName = false }: User
         />
         {user.isSpeaking && (
           <motion.div
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            className="absolute -top-1 -right-1 bg-gray-100 shadow-lg rounded-full p-1"
+            //initial={{ scale: 0.8, opacity: 0 }}
+            //animate={{ scale: 1, opacity: 1 }}
+            className="absolute -top-2 -right-1 bg-gray-100 shadow-lg rounded-full p-1"
           >
-            <AudioLines className={`${micSizeClasses[size]} text-green-600`} />
+            <AudioLinesIcon width='20' height='20'/>
           </motion.div>
         )}
       </div>
